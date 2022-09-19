@@ -1,0 +1,75 @@
+/******************************************************************************
+Eric Zhang
+Comp Sci 3
+1/28/2021
+Date program: graded
+*******************************************************************************/
+import java.io.*;
+public class Main
+{
+    public static String cap (String word)
+    {
+        String hold;
+        hold = word.substring(0,1);
+        word = word.toLowerCase ();
+        hold = hold.toUpperCase ();
+        word = word.substring(1);
+        word =(hold + word);
+        return word;
+    }
+	public static void main(String[] args)  throws IOException
+	{
+	    DataInputStream reader = new DataInputStream(System.in);
+		String week;
+		String month;
+		int day;
+		int year;
+		int num;
+		int choice;
+		int i;
+		System.out.print("Enter how many days you are going to enter: ");
+		num = Integer.parseInt(reader.readLine());
+		Date [] date = new Date [num + 1];
+		for (i =1; i <=num;i++)
+		{
+		    System.out.print("\nEnter the day of the week for day " + i +": ");
+		    week = reader.readLine();
+		    week = cap(week);
+		    System.out.print("Enter the month for day " + i +": ");
+		    month = reader.readLine();
+		    month = cap(month);
+		    System.out.print("Enter the day for day " + i +": ");
+		    day = Integer.parseInt(reader.readLine());
+		    System.out.print("Enter the year for day " + i +": ");
+		    year = Integer.parseInt(reader.readLine());
+		    date[i] = new Date (week,month,day,year);
+		}
+		for (i = 1; i <= num; i++)
+		{
+		    System.out.print ("\nDay #" + i +" is " + date [i].getWeek());
+		    System.out.print (" " + date[i].getMonth());
+		    System.out.print (" " + date[i].getDay());
+		    System.out.println (", " + date[i].getYear());
+		}
+		System.out.print ("\nWhat day # would you like to edit? ");
+		choice = Integer.parseInt(reader.readLine());
+		
+		System.out.print ("\nEnter the day of the week for day " + choice +": ");
+		week = reader.readLine();
+		week = cap(week);
+		System.out.print("Enter the month for day " + choice +": ");
+		month = reader.readLine();
+		month = cap(month);
+		System.out.print("Enter the day for day " + choice +": ");
+		day = Integer.parseInt(reader.readLine());
+		System.out.print("Enter the year for day " + choice +": ");
+		year = Integer.parseInt(reader.readLine());
+		date[choice].setAll (week,month,day,year);
+		
+		System.out.print ("\nDay #" + choice +" is " + date[choice].getWeek());
+		System.out.print (" " + date[choice].getMonth());
+		System.out.print (" " + date[choice].getDay());
+		System.out.println (", " + date[choice].getYear());
+		
+    }
+}

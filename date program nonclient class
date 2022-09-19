@@ -1,0 +1,52 @@
+/******************************************************************************
+Eric Zhang
+Comp Sci 3
+1/28/2021
+Date program: graded
+*******************************************************************************/
+public class Date
+{
+    private String week;
+    private String month;
+    private int day;
+    private int year;
+    
+    public Date ()
+    {
+        week = "Someday";
+        month = "Janutober";
+        day = 0;
+        year = 9999;
+    }
+    public Date (String w, String m, int d, int y)
+    {
+        week = w;
+        month = m;
+        day = d;
+        year = y;
+    }
+    public String getWeek ()
+    {
+        return week;
+    }
+    public String getMonth ()
+    {
+        return month;
+    }
+    public int getDay ()
+    {
+        return day;
+    }
+    public int getYear()
+    {
+        return year;
+    }
+    public void setAll (String w, String m, int d, int y)
+    {
+        week = w;
+        month = m;
+        day = d;
+        year = y;
+    }
+   
+}
